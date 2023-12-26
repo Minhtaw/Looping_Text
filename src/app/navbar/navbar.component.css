@@ -1,0 +1,24 @@
+.nav-bar {
+    background-color: rgb(255, 169, 156);
+    min-height: 14%;
+    position: fixed; /* Change from absolute to fixed */
+    top: 0;
+    z-index: 100; /* Adjusted z-index */
+    width: 100%;
+}
+
+.nav-text {
+    font-size: 2rem; 
+    font-weight: bold; 
+    margin-left: 20px;
+    margin-top: -1px;
+    display: flex;
+    align-items: center; 
+}
+
+img {
+    height: 70px;
+    width: 70px;
+    margin-left: 10px; 
+    /* align-items: center; */ /* This won't have any effect here */
+}

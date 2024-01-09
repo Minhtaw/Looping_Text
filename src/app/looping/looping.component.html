@@ -15,17 +15,31 @@
         </div>
 
         <br>
+        
+        <!-- <label class="IsCheck">
+            <input type="checkbox" [(ngModel)]="isChecked" /> No ဖြင့်ထုတ်မည်
+        </label> -->
+
+        <!-- Check with_number or without_number -->
+        <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="checkDisplay()">{{ displayCheck }}</button>
+
+        <!-- Check With width or length -->
+        <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="toggleDisplay()">{{ displayText }}</button>
+
+        <!-- Restart the  -->
+        <button class="buttons btn btn-primary" type="button" style="background-color: rgb(247, 87, 114);" (click)="resetValues()">ပြန်စရန်</button>
+
+        <br>
 
         <!-- restart and output button -->
-        <div class="d-grid gap-2 d-md-block">
+        <!-- <div class="d-grid gap-2 d-md-block">
             <button class="buttons btn btn-primary" type="button" style="background-color: rgb(247, 87, 114);" (click)="resetValues()">ပြန်စရန်</button>
-            <button class="buttons btn btn-primary" type="button" style="background-color: rgb(247, 87, 114);" (click)="toggleDisplay()">စာသားထုတ်ရန်</button>
-        </div>
+        </div> -->
     </form>
+
 
     <div *ngIf="repeatedText">
         <img src="/assets/images/copy.png" alt="copy" (click)="copyText()" style="cursor: pointer;">
-        <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="toggleDisplay()">{{ displayText }}</button>
         <p [innerHTML]="repeatedText"></p>
     </div>
 </div>

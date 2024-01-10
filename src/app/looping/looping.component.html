@@ -15,10 +15,6 @@
         </div>
 
         <br>
-        
-        <!-- <label class="IsCheck">
-            <input type="checkbox" [(ngModel)]="isChecked" /> No ဖြင့်ထုတ်မည်
-        </label> -->
 
         <!-- Check with_number or without_number -->
         <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="checkDisplay()">{{ displayCheck }}</button>
@@ -31,15 +27,13 @@
 
         <br>
 
-        <!-- restart and output button -->
-        <!-- <div class="d-grid gap-2 d-md-block">
-            <button class="buttons btn btn-primary" type="button" style="background-color: rgb(247, 87, 114);" (click)="resetValues()">ပြန်စရန်</button>
-        </div> -->
-    </form>
-
-
-    <div *ngIf="repeatedText">
         <img src="/assets/images/copy.png" alt="copy" (click)="copyText()" style="cursor: pointer;">
-        <p [innerHTML]="repeatedText"></p>
+    </form>
+    <br>
+    <br>
+
+    <div *ngIf="repeatedText" class="custom-box">
+        <p [innerHTML]="repeatedText" class="inner-paragraph"></p>
     </div>
+    
 </div>

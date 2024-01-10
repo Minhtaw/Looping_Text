@@ -12,8 +12,8 @@ import { flush } from '@angular/core/testing';
 export class LoopingComponent implements OnInit {
 
   // Properties to store user input, repeat count, repeated text, display text, and width toggle
-  userInput: string = 'Sorry babu';
-  repeatCount: number = 100;
+  userInput: string = ' ';
+  repeatCount: any;
   repeatedText: string = ' ';
   displayText: string = 'ဒေါင်လိုက်';
   displayCheck: string = 'နံပါတ်ဖြင့်ဒေါင်လိုက်'

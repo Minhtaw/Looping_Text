@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { flush } from '@angular/core/testing';
@@ -21,7 +22,7 @@ export class LoopingComponent implements OnInit {
   isChecked: boolean = true;
 
   // Constructor with ElementRef and Renderer2 injections
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef, private renderer: Renderer2, private snackBar: MatSnackBar) {}
 
   // OnInit lifecycle hook
   ngOnInit() {
@@ -42,10 +43,13 @@ export class LoopingComponent implements OnInit {
     // Use Clipboard API if available
     if (navigator.clipboard) {
       navigator.clipboard.writeText(cleanedText)
-        .then(() => alert('Text copied to clipboard!'))
-        .catch(err => console.error('Unable to copy text to clipboard', err));
+        .then(() => this.showSnackBar('Text copied to clipboard!'))
+        .catch(err => {
+          console.error('Unable to copy text to clipboard', err);
+          this.showSnackBar('Error copying text to clipboard', 'error');
+        });
+    // Fallback for browsers that do not support Clipboard API    
     } else {
-      // Fallback for browsers that do not support Clipboard API
       let textArea = this.renderer.createElement('textarea');
       this.renderer.setValue(textArea, cleanedText);
       this.renderer.appendChild(this.el.nativeElement, textArea);
@@ -55,8 +59,15 @@ export class LoopingComponent implements OnInit {
 
       this.renderer.removeChild(this.el.nativeElement, textArea);
 
-      alert('Text copied to clipboard!');
+      this.showSnackBar('copied!');
     }
+  }
+
+  showSnackBar(message: string, panelClass: string = 'success-snackbar') {
+    this.snackBar.open(message, 'Dismiss', {
+      duration: 3000,
+      panelClass: [panelClass],
+    });
   }
 
 

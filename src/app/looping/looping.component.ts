@@ -93,7 +93,7 @@ export class LoopingComponent implements OnInit {
     this.isChecked = !this.isChecked;
     this.displayCheck = this.isChecked ? 'နံပါတ်ဖြင့်ဒေါင်လိုက်' : 'နံပါတ်ဖြင့်အလျားလိုက်';
   
-    if (this.isWidth === true && this.isChecked === true) {
+    if (this.isChecked === true) {
       const repeatedLines = Array.from({ length: this.repeatCount }, (_, index) =>
         `${index + 1}. ${this.userInput} <br>`  // Added space after `${index + 1}.`
       );

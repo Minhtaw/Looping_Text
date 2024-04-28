@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { flush } from '@angular/core/testing';
@@ -13,10 +14,10 @@ import { flush } from '@angular/core/testing';
 export class LoopingComponent implements OnInit {
 
   // Properties to store user input, repeat count, repeated text, display text, and width toggle
-  userInput: string = ' ';
+  userInput: string = '';
   repeatCount: any;
-  repeatedText: string = ' ';
-  displayText: string = 'ဒေါင်လိုက်';
+  repeatedText: string = '';
+  displayText: string = 'အလျားလိုက်';
   displayCheck: string = 'နံပါတ်ဖြင့်ဒေါင်လိုက်'
   isWidth: boolean = true;
   isChecked: boolean = true;
@@ -78,12 +79,12 @@ export class LoopingComponent implements OnInit {
 
   toggleDisplay() {
     this.isWidth = !this.isWidth;
-    this.displayText = this.isWidth ? 'အလျားလိုက်' : 'ဒေါင်လိုက်';
+    this.displayText = this.isWidth ? 'ဒေါင်လိုက်' : 'အလျားလိုက်';
 
     if (this.isWidth === true) {
-      this.repeatedText = (this.userInput + '<br>').repeat(this.repeatCount).trim();
-    } else {
       this.repeatedText = (this.userInput + ' ').repeat(this.repeatCount).trim();
+    } else {
+      this.repeatedText = (this.userInput + '<br>').repeat(this.repeatCount).trim();
 
     }
 
@@ -95,20 +96,16 @@ export class LoopingComponent implements OnInit {
   
     if (this.isChecked === true) {
       const repeatedLines = Array.from({ length: this.repeatCount }, (_, index) =>
-        `${index + 1}. ${this.userInput} <br>`  // Added space after `${index + 1}.`
+        `${index + 1}. ${this.userInput} <br>` 
       );
       this.repeatedText = repeatedLines.join('').trim();
     } else {
       const repeatedLines = Array.from({ length: this.repeatCount }, (_, index) =>
-        `${index + 1}. ${this.userInput} `  // Added space after `${index + 1}.`
+        `${index + 1}. ${this.userInput} `  
       );
       this.repeatedText = repeatedLines.join('').trim();
     }
 
   }
-  
-  
-  
-
 
 } 

@@ -3,31 +3,54 @@
     <!-- Form  -->
     <form #textRepeaterForm="ngForm">
         <!-- Type input -->
-        <div class="form-floating mb-3">
-            <input class="form-control" id="TypingText" type="text" [(ngModel)]="userInput" name="userInput" />
-            <label for="TypingText" style="font-size: large; font-weight: normal; text-align: center;">စာသားထည့်သွင်းပါ</label>
+        <!-- <div class="form-floating mb-3">
+            <input class="form-control" id="TypingText" type="text" [(ngModel)]="userInput" name="userInput" placeholder="စာသားထည့်သွင်းပါ"/>
+            <label for="TypingText" style="font-size: small; font-weight: normal; text-align: center;">စာသားထည့်သွင်းပါ</label>
+        </div> -->
+
+        <div class="mb-3 row">
+            <div class="col-md-8">
+                <input class="form-control" id="TypingText" type="text" [(ngModel)]="userInput" name="Repeating" placeholder="စာသားထည့်သွင်းပါ"/>
+                <br>
+                <input class="form-control" id="CountingTime" type="number" [(ngModel)]="repeatCount" name="repeatCount" placeholder="အကြိမ်အရေတွက်ရိုက်ထည့်ပါ" />       
+                <br>        
+            </div>
+
+            <div class="col-md-4">                
+                <button class="buttons btn btn-primary" style="background-color:  #5483B3;" (click)="checkDisplay()">{{ displayCheck }}</button>
+                
+                <button class="buttons btn btn-primary" style="background-color:  #5483B3;" (click)="toggleDisplay()">{{ displayText }}</button>                
+                <br>                
+                <button class="button btn btn-primary" type="button" style="background-color:  #052659;" (click)="resetValues()">ပြန်စရန်</button>
+            </div>  
         </div>
 
         <!-- Count time input -->
-        <div class="form-floating mb-3">
+        <!-- <div class="form-floating mb-3">
             <input class="form-control" id="CountingTime" type="number" [(ngModel)]="repeatCount" name="repeatCount" />
-            <label for="CountingTime" style="font-size: large; font-weight: normal; text-align: center;">အကြိမ်အရေတွက်ရိုက်ထည့်ပါ</label>
-        </div>
+            <label for="CountingTime" style="font-size: small; font-weight: normal; text-align: center;">အကြိမ်အရေတွက်ရိုက်ထည့်ပါ</label>
+        </div> -->
+
 
         <br>
 
         <!-- Check with_number or without_number -->
-        <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="checkDisplay()">{{ displayCheck }}</button>
+        <!-- <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="checkDisplay()">{{ displayCheck }}</button> -->
+
 
         <!-- Check With width or length -->
-        <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="toggleDisplay()">{{ displayText }}</button>
+        <!-- <button class="buttons btn btn-primary" style="background-color: rgb(247, 87, 114);" (click)="toggleDisplay()">{{ displayText }}</button> -->
 
-        <!-- Restart the  -->
-        <button class="buttons btn btn-primary" type="button" style="background-color: rgb(247, 87, 114);" (click)="resetValues()">ပြန်စရန်</button>
 
         <br>
 
-        <img src="/assets/images/copy.png" alt="copy" (click)="copyText()" style="cursor: pointer;">
+        <!-- Restart the  -->
+        <!-- <button class="buttons btn btn-primary" type="button" style="background-color: rgb(247, 87, 114);" (click)="resetValues()">ပြန်စရန်</button> -->
+
+        <br>
+
+        <!-- <img src="/assets/images/copy.png" alt="copy" (click)="copyText()" style="cursor: pointer;"> -->
+        <img src="\assets\images\copy-removebg-preview.png" alt="copy" (click)="copyText()" style="cursor: pointer;">
     </form>
     <br>
     <br>

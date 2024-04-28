@@ -4,23 +4,28 @@
   min-height: 92%;
   width: 100%;
   padding: 20px; 
-  background-color: rgb(255, 230, 226);
-  margin-top: 42px;
+  /* background-color: rgb(255, 230, 226); */
+  background-color: #C1E8FF;
+  /* margin-top: 42px; */
+  margin-top: 8vh;
 }
 
 
 /* Form */
 form {
   padding: 10px;
-
+  
 }
 
 /* YourComponent.component.css */
 .form-control {
   font-size: large;
   font-weight: normal;
+  width: 95%;
+  height: 45px;
+  margin-left: 20px;
+  
 }
-
 
 
 input[type=send] {
@@ -39,22 +44,49 @@ input[type=send] {
   padding: 10px; /* Adjust padding as needed */
 }
 
-.buttons{
-  padding: 15px 32px;
+.button{
+  padding: 15px 38%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
-  border-color: rgb(251, 113, 136);
+  margin: 10px 1px;
+   /* border-color: rgb(251, 113, 136); */
+  border-color: #11212D;
   margin-right: 10px;
-  float: center;
+  
+
+  @media screen and (max-width: 600px) {
+    padding: 15px 24%;; 
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 15px 24%;; 
+  }
+}
+
+.buttons{
+  padding: 15px 8%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 5px 2px; */
+   /* border-color: rgb(251, 113, 136); */
+  border-color: #11212D;
+  margin-right: 10px;
+
+
+  @media screen and (max-width: 600px) {
+    padding: 15px 2%; 
+  }
 
 }
 
+
 img {
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
   float: right;
   align-items: center;
 }
@@ -64,7 +96,9 @@ img {
   border: 1px; 
   padding: 10px; 
   margin: 10px; 
-  background-color: rgb(255, 230, 226);
+  /* background-color: rgb(255, 230, 226); */
+  background-color:  #C1E8FF;
+
 }
 
 .inner-paragraph {

@@ -1,6 +1,7 @@
 .nav-bar {
-    background-color: rgb(255, 169, 156);
-    min-height: 14%;
+    /* background-color: rgb(255, 169, 156); */
+    background-color: #052659;
+    min-height: 10%;
     position: fixed; /* Change from absolute to fixed */
     top: 0;
     z-index: 100; /* Adjusted z-index */
@@ -11,9 +12,11 @@
     font-size: 2rem; 
     font-weight: bold; 
     margin-left: 20px;
-    margin-top: -1px;
+    /* margin-top: -1px; */
+    margin-top: 20px;
     display: flex;
     align-items: center; 
+    color: white;
 }
 
 img {

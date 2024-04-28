@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgModel } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
